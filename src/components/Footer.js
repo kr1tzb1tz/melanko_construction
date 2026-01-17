@@ -55,10 +55,10 @@ export default function Footer() {
                   info@melankoconstruction.com
                 </a>
               </div>
-              <div className="flex items-start gap-3">
+              <a href="https://www.google.com/maps/search/?api=1&query=451+E+39th+St,+Shadyside,+OH+43947" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 hover:text-white transition-colors duration-300">
                 <MapPin size={20} className="flex-shrink-0 mt-0.5" />
                 <span>451 E 39th St<br />Shadyside, OH 43947</span>
-              </div>
+              </a>
             </div>
           </div>
           
