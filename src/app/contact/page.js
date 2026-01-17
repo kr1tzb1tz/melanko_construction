@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import Footer from '../../components/Footer';
 import LetsGetStarted from '../../components/LetsGetStarted';
 
@@ -33,7 +33,7 @@ export default function Contact() {
       {/* Contact Information */}
       <section className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {/* Phone */}
             <div className="text-center p-8 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors duration-300">
               <div className="bg-[#CC1A25] text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -68,23 +68,15 @@ export default function Contact() {
                 <MapPin size={28} />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3">Location</h3>
-              <p className="text-gray-700 font-medium">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=451+E+39th+St,+Shadyside,+OH+43947"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#CC1A25] hover:text-[#b3151f] font-medium transition-colors duration-300"
+              >
                 451 E 39th St<br />
                 Shadyside, OH 43947
-              </p>
-            </div>
-
-            {/* Hours */}
-            <div className="text-center p-8 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors duration-300">
-              <div className="bg-[#CC1A25] text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Clock size={28} />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Hours</h3>
-              <div className="text-gray-700 text-sm space-y-1">
-                <p>Mon-Fri: 7AM - 6PM</p>
-                <p>Sat: 8AM - 4PM</p>
-                <p>Sun: Closed</p>
-              </div>
+              </a>
             </div>
           </div>
         </div>
