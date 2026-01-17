@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Professional Contractor Color Theme */
+  --primary-navy: #000000;
+  --primary-red: #CC1A25;
+  --white: #FFFFFF;
+  --black: #000000;
+  --accent-gray: #374151;
+
+  /* Extended color palette for professional use */
+  --background: var(--white);
+  --foreground: var(--black);
+  --primary: var(--primary-navy);
+  --secondary: var(--primary-red);
+  --accent: var(--primary-red);
+  --text-primary: var(--black);
+  --text-secondary: #374151;
+  --text-muted: #6B7280;
+  --border-light: #E5E7EB;
+  --border-medium: #D1D5DB;
+  --surface-light: #F9FAFB;
+  --surface-medium: #F3F4F6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Open Sans', var(--font-geist-sans);
+  --font-heading: 'Montserrat', sans-serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease-out;
+}
+
+/* Floating orb animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, -20px);
+  }
+}
+
+@keyframes floatMedium {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-15px, 15px);
+  }
+}
+
+@keyframes floatFast {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: floatMedium 6s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: floatFast 4s ease-in-out infinite;
+}
+
+/* Professional contractor button styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-[var(--primary-navy)] to-[var(--primary-navy)] hover:from-[#1f2937] hover:to-[#1f2937] text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+  @apply border-2 border-[var(--primary-navy)] text-[var(--primary-navy)] hover:bg-[var(--primary-navy)] hover:text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105;
+}
+
+.btn-accent {
+  @apply bg-gradient-to-r from-[var(--primary-red)] to-[var(--primary-red)] hover:from-[#b3151f] hover:to-[#b3151f] text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+}
+
+/* Elegant card styles */
+.card-elegant {
+  @apply bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100;
+}
+
+/* Professional contractor typography */
+.heading-primary {
+  @apply font-heading text-5xl md:text-6xl font-bold text-[var(--primary-navy)] leading-tight;
+}
+
+.heading-secondary {
+  @apply font-heading text-3xl md:text-4xl font-semibold text-[var(--primary-navy)] leading-tight;
+}
+
+.heading-secondary-light {
+  @apply font-heading text-3xl md:text-4xl font-semibold text-white leading-tight drop-shadow-lg;
+}
+
+.heading-tertiary {
+  @apply font-heading text-2xl md:text-3xl font-medium text-[var(--primary-navy)] leading-tight;
+}
+
+.text-elegant {
+  @apply text-lg text-[var(--text-secondary)] leading-relaxed;
+}
+
+.text-elegant-light {
+  @apply text-lg text-white/90 leading-relaxed drop-shadow-sm;
+}
+
+/* Professional contractor gradient backgrounds */
+.bg-gradient-elegant {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, #1f2937 50%, #374151 100%);
+}
+
+.bg-gradient-warm {
+  background: linear-gradient(135deg, var(--surface-light) 0%, var(--surface-medium) 100%);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, #1f2937 50%, #374151 100%);
+}
